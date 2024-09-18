@@ -2,6 +2,7 @@
 
 ## Struktur Projek
 
+```bash
 ├── cmd
 │   └── server
 │       └── main.go           # Entry point aplikasi
@@ -23,6 +24,7 @@
 ├── docker-compose.yml        # Docker Compose file untuk menjalankan aplikasi dan database
 ├── Makefile                  # Makefile untuk task seperti migrasi database
 └── .env                      # File environment
+```
 
 ## Cara Menjalankan Aplikasi
 
@@ -44,6 +46,7 @@ make run
 ```
 
 ## ERD
+```bash
 +-------------------+
 |      users        |
 +-------------------+
@@ -58,6 +61,7 @@ make run
 | deleted_at        |
 | deleted_by        |
 +-------------------+
+```
 
 ## Arsitektur Aplikasi
 
@@ -87,6 +91,7 @@ make run
 * Components: Config Files seperti .env
 
 ## Diagram Arsitektur:
+```bash
 +------------------------------------+
 |           Presentation Layer       |
 |                                    |
@@ -148,3 +153,4 @@ make run
 | |       Config Files          |      |
 | +-----------------------------+      |
 +------------------------------------+
+```
