@@ -5,25 +5,55 @@
 ```bash
 ├── cmd
 │   └── server
-│       └── main.go           # Entry point aplikasi
+│       └── main.go           
 ├── config
-│   └── config.go             # File untuk pengaturan konfigurasi
-├── domain
-│   └── user.go               # Model User dan Usecase User
-├── handler
-│   └── user_handler.go       # Handler untuk HTTP request (register, login, dll.)
-├── middleware
-│   └── auth.go               # Middleware untuk JWT Authentication
+│   └── app.go
+│   └── sqlx.go             
+├── internal    
+│   └── domain
+│       └── base_domain.go 
+│       └── user.go 
+│   └── handler
+│       └── auth_handler.go
+│       └── user_handler.go  
+│   └── repository
+│       └── user_repository.go 
+│   └── request
+│       └── login_request.go
+│       └── register_request.go
+│       └── update_user_request.go   
+│   └── response
+│       └── base_response.go
+│       └── login_response.go  
+│       └── register_response.go 
+│       └── user_response.go 
+│   └── router
+│       └── auth_route.go 
+│       └── user_route.go 
+│       └── router.go 
+│       └── router_setting.go
+│   └── usecase     
+│       └── auth_usecase.go 
+│       └── user_usecase.go
+├── pkg
+│   └── constant
+│       └── response_message.go 
+│   └── db
+│       └── sqlx.go 
+│   └── helpers
+│       └── formatter.go 
+│   └── jwt
+│       └── jwt.go 
+│   └── log
+│       └── logrus.go 
+│   └── middleware  
+│       └── middleware.go              
 ├── migrations
-│   └── <timestamp>_create_users_table.sql  # File migrasi untuk membuat tabel users
-├── repository
-│   └── user_repository.go    # Repository layer untuk query database
-├── usecase
-│   └── user_usecase.go       # Business logic untuk user
-├── Dockerfile                # Dockerfile untuk membuat image aplikasi
-├── docker-compose.yml        # Docker Compose file untuk menjalankan aplikasi dan database
-├── Makefile                  # Makefile untuk task seperti migrasi database
-└── .env                      # File environment
+│   └── <timestamp>_create_users_table.sql  
+├── Dockerfile                
+├── docker-compose.yml        
+├── Makefile                  
+└── .env                      
 ```
 
 ## Cara Menjalankan Aplikasi
