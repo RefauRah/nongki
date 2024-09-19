@@ -18,6 +18,8 @@ func main() {
 		panic(err)
 	}
 
+	config.InitRedis()
+
 	// App Init
 	appConfig := config.AppConfig{
 		Db:     db,

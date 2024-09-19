@@ -35,7 +35,7 @@ func JWTMiddleware(next http.Handler) http.Handler {
 		}
 
 		if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
-			userID := claims["id"].(string)
+			userID := claims["user_id"].(string)
 
 			ctx := context.WithValue(r.Context(), UserContextKey("userID"), userID)
 			next.ServeHTTP(w, r.WithContext(ctx))

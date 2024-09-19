@@ -5,6 +5,7 @@ import (
 	"nongki/internal/handler"
 	"nongki/internal/repository"
 	"nongki/internal/usecase"
+	middleware "nongki/pkg/midleware"
 
 	"github.com/go-chi/chi/v5"
 )
@@ -17,4 +18,5 @@ func RegisterAuthRoutes(r chi.Router, app config.AppConfig) {
 
 	r.Post("/register", authHandler.Register)
 	r.Post("/login", authHandler.Login)
+	r.With(middleware.JWTMiddleware).Post("/refresh-token", authHandler.RefreshTokenHandler)
 }

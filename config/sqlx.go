@@ -1,7 +1,7 @@
 package config
 
 import (
-	"log"
+	"nongki/pkg/log"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -16,9 +16,10 @@ type Config struct {
 }
 
 func LoadConfig() *Config {
+	logger := log.GetLogger()
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		logger.Fatal("Error loading .env file")
 	}
 
 	return &Config{
